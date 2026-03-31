@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 // The uri string must be the connection string for the database (obtained on Atlas).
-const uri = "mongodb+srv://<user>:<password>@ckmdb.5oxvqja.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb://icaruz:1234@ac-r39jyol-shard-00-00.jddpgmf.mongodb.net:27017,ac-r39jyol-shard-00-01.jddpgmf.mongodb.net:27017,ac-r39jyol-shard-00-02.jddpgmf.mongodb.net:27017/?ssl=true&replicaSet=atlas-t5mxy6-shard-0&authSource=admin&appName=Cluster0";
 
 // --- This is the standard stuff to get it to work on the browser
 const express = require('express');
@@ -36,8 +36,8 @@ console.log("Looking for: " + searchKey);
 
 async function run() {
   try {
-    const database = client.db('ckmdb');
-    const parts = database.collection('cmps415');
+    const database = client.db('MyDbExample');
+    const parts = database.collection('MyStuff');
 
     // Hardwired Query for a part that has partID '12345'
     // const query = { partID: '12345' };
